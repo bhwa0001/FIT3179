@@ -33,7 +33,7 @@
         "type": "circle",
         "tooltip": {"content": "data"},
         "opacity": 0.8,
-        "stroke": "white",
+        "stroke": "black",
         "strokeWidth": 1
       },
       "encoding": {
