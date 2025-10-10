@@ -20,7 +20,11 @@
       "as": ["Cause", "Loss"]
     },
     {
-      "filter": "Country_selection == null || datum.Entity == Country_selection"
+      "filter": "datum.Entity == 'Australia'"
+    },
+    {
+      "calculate": "isValid(datum.Loss) ? datum.Loss : 0",
+      "as": "LossValue"
     }
   ],
   "layer": [
@@ -56,24 +60,6 @@
             "title": "Hectares Lost"
           }
         ]
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 5,
-        "dy": -100,
-        "fontSize": 11,
-        "fontStyle": "italic"
-      },
-      "encoding": {
-        "x": {"datum": "2020"},
-        "y": {"datum": 0.95},
-        "text": {
-          "value": "2020: Wildfire-related loss peaked globally"
-        },
-        "color": {"value": "black"}
       }
     }
   ]
