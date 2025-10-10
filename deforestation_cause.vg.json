@@ -7,25 +7,52 @@
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/tree-cover-loss-by-dominant-driver.csv"
   },
   "transform": [
-    {
-      "fold": [
-        "Tree cover loss driven by settlements and infrastructure",
-        "Tree cover loss driven by the mining or energy industry",
-        "Tree cover loss driven by non-fire natural disturbances",
-        "Tree cover loss driven by shifting cultivation",
-        "Tree cover loss driven by logging",
-        "Tree cover loss driven by agriculture",
-        "Tree cover loss driven by wildfire"
-      ],
-      "as": ["Cause", "Loss"]
-    },
+
     {
       "filter": "datum.Entity == 'Australia'"
     },
     {
-      
-      "calculate": "isValid(datum.Loss) ? datum.Loss : 0",
-      "as": "LossValue"
+      "calculate": "isValid(datum['Tree cover loss driven by settlements and infrastructure']) ? datum['Tree cover loss driven by settlements and infrastructure'] : 0",
+      "as": "Settlements"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by the mining or energy industry']) ? datum['Tree cover loss driven by the mining or energy industry'] : 0",
+      "as": "Mining"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by non-fire natural disturbances']) ? datum['Tree cover loss driven by non-fire natural disturbances'] : 0",
+      "as": "NaturalDisturbances"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by shifting cultivation']) ? datum['Tree cover loss driven by shifting cultivation'] : 0",
+      "as": "ShiftingCultivation"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by logging']) ? datum['Tree cover loss driven by logging'] : 0",
+      "as": "Logging"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by agriculture']) ? datum['Tree cover loss driven by agriculture'] : 0",
+      "as": "Agriculture"
+    },
+    {
+      "calculate": "isValid(datum['Tree cover loss driven by wildfire']) ? datum['Tree cover loss driven by wildfire'] : 0",
+      "as": "Wildfire"
+    },
+    {
+      "fold": [
+        "Settlements",
+        "Mining",
+        "NaturalDisturbances",
+        "ShiftingCultivation",
+        "Logging",
+        "Agriculture",
+        "Wildfire"
+      ],
+      "as": ["Cause", "LossValue"]
+    },
+    {
+      "filter": "datum.Entity == 'Australia'"
     }
   ],
   "layer": [
