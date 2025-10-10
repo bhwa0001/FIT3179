@@ -26,10 +26,6 @@
       
       "calculate": "isValid(datum.Loss) ? datum.Loss : 0",
       "as": "LossValue"
-    },
-    {
-      "calculate": "if(datum.Cause == 'Tree cover loss driven by settlements and infrastructure', 'Settlements & Infrastructure', if(datum.Cause == 'Tree cover loss driven by the mining or energy industry', 'Mining & Energy', if(datum.Cause == 'Tree cover loss driven by non-fire natural disturbances', 'Natural Disturbances', if(datum.Cause == 'Tree cover loss driven by shifting cultivation', 'Shifting Cultivation', if(datum.Cause == 'Tree cover loss driven by logging', 'Logging', if(datum.Cause == 'Tree cover loss driven by agriculture', 'Agriculture', 'Wildfire')))))",
-      "as": "CauseShort"
     }
   ],
   "layer": [
@@ -49,14 +45,14 @@
           "stack": "normalize"
         },
         "color": {
-          "field": "CauseShort",
+          "field": "Cause",
           "type": "nominal",
           "title": "Cause of Loss"
         },
         "tooltip": [
           {"field": "Entity", "type": "nominal", "title": "Country"},
           {"field": "Year", "type": "temporal"},
-          {"field": "CauseShort", "type": "nominal", "title": "Cause"},
+          {"field": "Cause", "type": "nominal", "title": "Cause"},
           {
             "aggregate": "sum",
             "field": "LossValue",
