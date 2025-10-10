@@ -6,10 +6,21 @@
   "data": {
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/tree-cover-loss-by-dominant-driver.csv"
   },
+  "params": [
+    {
+      "name": "country_select",
+      "value": "Australia",
+      "bind": {
+        "input": "select",
+        "options": ["Australia", "Brazil", "China"],
+        "name": "Select Country: "
+      }
+    }
+  ],
   "transform": [
 
     {
-      "filter": "datum.Entity == 'Australia'"
+      "filter": "datum.Entity == country_select"
     },
     {
       "calculate": "datum['Tree cover loss driven by settlements and infrastructure'] || 0",
@@ -50,9 +61,6 @@
         "Wildfire"
       ],
       "as": ["Cause", "LossValue"]
-    },
-    {
-      "filter": "datum.Entity == 'Australia'"
     }
   ],
   "layer": [
