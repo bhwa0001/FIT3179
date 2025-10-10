@@ -23,31 +23,6 @@
       "filter": "Country_selection == null || datum.Entity == Country_selection"
     }
   ],
-  "params": [
-    {
-      "name": "Country_selection",
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "Afghanistan",
-          "Australia",
-          "Brazil",
-          "Indonesia",
-          "United States"
-        ],
-        "labels": [
-          "Show All",
-          "Afghanistan",
-          "Australia",
-          "Brazil",
-          "Indonesia",
-          "United States"
-        ],
-        "name": "Select Country: "
-      }
-    }
-  ],
   "layer": [
     {
       "mark": {"type": "area", "interpolate": "monotone"},
