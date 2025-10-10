@@ -32,11 +32,11 @@
     },
     {
       "calculate": "datum['Tree cover loss driven by non-fire natural disturbances'] || 0",
-      "as": "NaturalDisturbances"
+      "as": "Natural Disturbances"
     },
     {
       "calculate": "datum['Tree cover loss driven by shifting cultivation'] || 0",
-      "as": "ShiftingCultivation"
+      "as": "Shifting Cultivation"
     },
     {
       "calculate": "datum['Tree cover loss driven by logging'] || 0",
@@ -54,8 +54,8 @@
       "fold": [
         "Settlements",
         "Mining",
-        "NaturalDisturbances",
-        "ShiftingCultivation",
+        "Natural Disturbances",
+        "Shifting Cultivation",
         "Logging",
         "Agriculture",
         "Wildfire"
