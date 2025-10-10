@@ -9,13 +9,13 @@
   "transform": [
     {
       "fold": [
-        "settlements and infrastructure",
-        "the mining or energy industry",
-        "non-fire natural disturbances",
-        "shifting cultivation",
-        "logging",
-        "agriculture",
-        "wildfire"
+        "Tree cover loss driven by settlements and infrastructure",
+        "Tree cover loss driven by the mining or energy industry",
+        "Tree cover loss driven by non-fire natural disturbances",
+        "Tree cover loss driven by shifting cultivation",
+        "Tree cover loss driven by logging",
+        "Tree cover loss driven by agriculture",
+        "Tree cover loss driven by wildfire"
       ],
       "as": ["Cause", "Loss"]
     },
@@ -26,6 +26,10 @@
       
       "calculate": "isValid(datum.Loss) ? datum.Loss : 0",
       "as": "LossValue"
+    },
+    {
+      "calculate": "if(datum.Cause == 'Tree cover loss driven by settlements and infrastructure', 'Settlements & Infrastructure', if(datum.Cause == 'Tree cover loss driven by the mining or energy industry', 'Mining & Energy', if(datum.Cause == 'Tree cover loss driven by non-fire natural disturbances', 'Natural Disturbances', if(datum.Cause == 'Tree cover loss driven by shifting cultivation', 'Shifting Cultivation', if(datum.Cause == 'Tree cover loss driven by logging', 'Logging', if(datum.Cause == 'Tree cover loss driven by agriculture', 'Agriculture', 'Wildfire')))))",
+      "as": "CauseShort"
     }
   ],
   "layer": [
