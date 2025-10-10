@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "title": "Tree Cover Loss by Cause, 2001–2024",
+  "data": {
+    "url": "data/deforestation.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Tree cover loss driven by settlements and infrastructure",
+        "Tree cover loss driven by the mining or energy industry",
+        "Tree cover loss driven by non-fire natural disturbances",
+        "Tree cover loss driven by shifting cultivation",
+        "Tree cover loss driven by logging",
+        "Tree cover loss driven by agriculture",
+        "Tree cover loss driven by wildfire"
+      ],
+      "as": ["Cause", "Loss"]
+    },
+    {
+      "filter": "Country_selection == null || datum.Entity == Country_selection"
+    }
+  ],
+  "params": [
+    {
+      "name": "Country_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Afghanistan",
+          "Australia",
+          "Brazil",
+          "Indonesia",
+          "United States"
+        ],
+        "labels": [
+          "Show All",
+          "Afghanistan",
+          "Australia",
+          "Brazil",
+          "Indonesia",
+          "United States"
+        ],
+        "name": "Select Country: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Loss",
+          "type": "quantitative",
+          "title": "Tree Cover Loss (hectares)",
+          "stack": "normalize"
+        },
+        "color": {
+          "field": "Cause",
+          "type": "nominal",
+          "title": "Cause of Loss"
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal", "title": "Country"},
+          {"field": "Year", "type": "temporal"},
+          {"field": "Cause", "type": "nominal"},
+          {
+            "aggregate": "sum",
+            "field": "Loss",
+            "type": "quantitative",
+            "format": ",.0f",
+            "title": "Hectares Lost"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -100,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "x": {"datum": "2020"},
+        "y": {"datum": 0.95},
+        "text": {
+          "value": "2020: Wildfire-related loss peaked globally"
+        },
+        "color": {"value": "black"}
+      }
+    }
+  ]
+}
