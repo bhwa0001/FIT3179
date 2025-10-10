@@ -97,6 +97,34 @@
           }
         ]
       }
+    },
+
+        {
+      "mark": {
+        "type": "rule",
+        "color": "red",
+        "strokeWidth": 2,
+        "strokeDash": [5, 5]
+      },
+      "encoding": {
+        "x": {"datum": "2020"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": -20,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "fill": "red"
+      },
+      "encoding": {
+        "x": {"datum": "2020"},
+        "y": {"datum": 0.9},
+        "text": {"value": "2020: Wildfire peak"}
+      }
     }
   ]
 }
