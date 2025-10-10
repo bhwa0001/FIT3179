@@ -12,31 +12,31 @@
       "filter": "datum.Entity == 'Australia'"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by settlements and infrastructure']) ? datum['Tree cover loss driven by settlements and infrastructure'] : 0",
+      "calculate": "datum['Tree cover loss driven by settlements and infrastructure'] || 0",
       "as": "Settlements"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by the mining or energy industry']) ? datum['Tree cover loss driven by the mining or energy industry'] : 0",
+      "calculate": "datum['Tree cover loss driven by the mining or energy industry'] || 0",
       "as": "Mining"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by non-fire natural disturbances']) ? datum['Tree cover loss driven by non-fire natural disturbances'] : 0",
+      "calculate": "datum['Tree cover loss driven by non-fire natural disturbances'] || 0",
       "as": "NaturalDisturbances"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by shifting cultivation']) ? datum['Tree cover loss driven by shifting cultivation'] : 0",
+      "calculate": "datum['Tree cover loss driven by shifting cultivation'] || 0",
       "as": "ShiftingCultivation"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by logging']) ? datum['Tree cover loss driven by logging'] : 0",
+      "calculate": "datum['Tree cover loss driven by logging'] || 0",
       "as": "Logging"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by agriculture']) ? datum['Tree cover loss driven by agriculture'] : 0",
+      "calculate": "datum['Tree cover loss driven by agriculture'] || 0",
       "as": "Agriculture"
     },
     {
-      "calculate": "isValid(datum['Tree cover loss driven by wildfire']) ? datum['Tree cover loss driven by wildfire'] : 0",
+      "calculate": "datum['Tree cover loss driven by wildfire'] || 0",
       "as": "Wildfire"
     },
     {
