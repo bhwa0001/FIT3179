@@ -49,14 +49,14 @@
           "stack": "normalize"
         },
         "color": {
-          "field": "Cause",
+          "field": "CauseShort",
           "type": "nominal",
           "title": "Cause of Loss"
         },
         "tooltip": [
           {"field": "Entity", "type": "nominal", "title": "Country"},
           {"field": "Year", "type": "temporal"},
-          {"field": "Cause", "type": "nominal"},
+          {"field": "CauseShort", "type": "nominal", "title": "Cause"},
           {
             "aggregate": "sum",
             "field": "LossValue",
