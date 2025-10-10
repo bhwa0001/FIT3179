@@ -62,24 +62,6 @@
           }
         ]
       }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 5,
-        "dy": -100,
-        "fontSize": 11,
-        "fontStyle": "italic"
-      },
-      "encoding": {
-        "x": {"datum": "2020"},
-        "y": {"datum": 0.95},
-        "text": {
-          "value": "2020: Wildfire-related loss peaked globally"
-        },
-        "color": {"value": "black"}
-      }
     }
   ]
 }
