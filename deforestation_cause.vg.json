@@ -4,7 +4,7 @@
   "height": 400,
   "title": "Tree Cover Loss by Cause, 2001–2024",
   "data": {
-    "url": "data/deforestation.csv"
+    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/tree-cover-loss-by-dominant-driver.csv"
   },
   "transform": [
     {
