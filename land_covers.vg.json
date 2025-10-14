@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "title": "Land Cover Class Rankings, Australia 1988–2024",
+  "data": {
+    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Proportion of land cover classes, Australia 1988-2024.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Herbaceous crops (%)",
+        "Grassland (%)",
+        "Tree covered areas (%)",
+        "Sparsely vegetated areas (%)",
+        "Other land cover* (%)"
+      ],
+      "as": ["Land Cover Class", "Percentage"]
+    },
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "Percentage", "order": "descending"}],
+      "groupby": ["Year"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "point": true, "strokeWidth": 3},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": 0}
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": "Rank",
+          "scale": {"domain": [1, 5], "reverse": true},
+          "axis": {"tickMinStep": 1}
+        },
+        "color": {
+          "field": "Land Cover Class",
+          "type": "nominal",
+          "title": "Land Cover Class"
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Land Cover Class", "type": "nominal"},
+          {"field": "Percentage", "type": "quantitative", "format": ".1f", "title": "Percentage (%)"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontWeight": "bold"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "rank", "type": "quantitative"},
+        "color": {"field": "Land Cover Class", "type": "nominal", "legend": null}
+      }
+    }
+  ]
+}
