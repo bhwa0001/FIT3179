@@ -6,6 +6,9 @@
   "data": {
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Proportion_of_land_cover_classes,_Australia_1988-2024.csv"
   },
+  "config": {
+  "view": {"stroke": "transparent"}
+    },
   "transform": [
     {
       "fold": [
