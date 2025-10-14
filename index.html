@@ -67,14 +67,20 @@
         <div id="deforestation_cause"></div>
         
         <div class="legend-note">
-            <h3>Note</h3>
             <p>This normalized stacked area chart shows the proportional contribution of different causes to tree cover loss over time. Use the dropdown menu to filter by country or view all countries combined.</p>
             <p>We can see that Australia's leading cause of deforestation is wildfires, varying drastically from China (logging) and Brazil (Agriculture)</p>
             <p>Brazil fits the assumption that most deforestation is caused by agricultural practices.</p>
             <p>A factor that has significant share in all three countries is logging.</p>
         </div>
     </div>
-
+    <div class="container">
+        <h2>Australia Land Cover Classes 1988-2024</h2>
+        <div id="land_covers"></div>
+        
+        <div class="legend-note">
+            <p>yarr</p>
+        </div>
+    </div>
 
     <script type="text/javascript">
 
@@ -86,6 +92,11 @@
         // Embed the deforestation cause chart
         var spec2 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/deforestation_cause.vg.json";
         vegaEmbed('#deforestation_cause', spec2).then(function(result) {
+            // Access the Vega view instance
+        }).catch(console.error);
+                // Embed the landcovers chart
+        var spec3 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/land_covers.vg.json";
+        vegaEmbed('#land_covers', spec3).then(function(result) {
             // Access the Vega view instance
         }).catch(console.error);
     </script>
