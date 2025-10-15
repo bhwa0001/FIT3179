@@ -4,7 +4,7 @@
   "height": 400,
   "title": "Intertidal Seagrass Extent by State/Territory (2020)",
   "data": {
-    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Intertidal-seagrass-extent-by-state,-territory,-and-other-Commonwealth-waters,-2020.csv"
+    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Intertidal-seagrass-extent-by-state,-territory,-and-other-Commonwealth-waters,-2020-clean.csv"
   },
   "transform": [
     {
