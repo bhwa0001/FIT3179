@@ -27,7 +27,7 @@
   ],
   "layer": [
     {
-      "mark": {"type": "line", "strokeWidth": 10},
+      "mark": {"type": "line", "point":true,"strokeWidth": 7},
       "encoding": {
         "x": {
           "field": "Year",
