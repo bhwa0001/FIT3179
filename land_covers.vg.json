@@ -32,19 +32,21 @@
           "field": "Year",
           "type": "ordinal",
           "title": "Year",
-          "axis": {"labelAngle": 0}
+          "axis": {"labelAngle": -45, "labelOverlap": true}
+          
         },
         "y": {
           "field": "rank",
           "type": "quantitative",
           "title": "Rank",
           "scale": {"domain": [1, 5], "reverse": true},
-          "axis": {"tickMinStep": 1}
+          "axis": {"tickCount": 5, "values": [1, 2, 3, 4, 5]}
         },
         "color": {
           "field": "Land Cover Class",
           "type": "nominal",
-          "title": "Land Cover Class"
+          "title": "Land Cover Class",
+          "legend": {"orient": "bottom", "titleOrient": "top"}
         },
         "tooltip": [
           {"field": "Year", "type": "ordinal"},
