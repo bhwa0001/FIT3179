@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Intertidal Seagrass Extent by State/Territory (2020)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Intertidal-seagrass-extent-by-state,-territory,-and-other-Commonwealth-waters,-2020.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum['Intertidal seagrass extent (ha) (\\'000)']",
+      "as": "Extent"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 80, "stroke": "#fff", "strokeWidth": 2},
+      "encoding": {
+        "theta": {
+          "field": "Extent",
+          "type": "quantitative",
+          "stack": true
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "title": "State/Territory",
+          "legend": {"orient": "right", "titleOrient": "top"}
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "Region"},
+          {"field": "Extent", "type": "quantitative", "format": ".1f", "title": "Extent ('000 ha)"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "fontSize": 14, "fontWeight": "bold"},
+      "encoding": {
+        "text": {"value": "Seagrass\nExtent"}
+      }
+    }
+  ],
+  "view": {"stroke": null}
+}
