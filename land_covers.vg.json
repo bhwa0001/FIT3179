@@ -46,8 +46,7 @@
         "color": {
           "field": "Land Cover Class",
           "type": "nominal",
-          "title": "Land Cover Class",
-          "legend": {"orient": "bottom", "titleOrient": "top"}
+          "title": "Land Cover Class"
         },
         "tooltip": [
           {"field": "Year", "type": "ordinal"},
