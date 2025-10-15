@@ -8,6 +8,8 @@
   },
 
   "transform": [
+    {"filter": "datum.Year && datum.Year !== 'Year'"},
+    {"filter": "isValid(datum.Year) && length(datum.Year) === 4"},
     {
       "fold": [
         "Herbaceous crops (%)",
