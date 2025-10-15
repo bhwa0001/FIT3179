@@ -8,6 +8,7 @@
   },
 
   "transform": [
+    {"filter": "datum.Year >= 2000"},
     {
       "fold": [
         "Herbaceous crops (%)",
@@ -54,15 +55,6 @@
           {"field": "Percentage", "type": "quantitative", "format": ".1f", "title": "Percentage (%)"},
           {"field": "rank", "type": "quantitative", "title": "Rank"}
         ]
-      }
-    },
-    {
-      "mark": {"type": "text", "align": "left", "dx": 10, "fontWeight": "bold"},
-      "encoding": {
-        "x": {"field": "Year", "type": "ordinal"},
-        "y": {"field": "rank", "type": "quantitative"},
-        "text": {"field": "rank", "type": "quantitative"},
-        "color": {"field": "Land Cover Class", "type": "nominal", "legend": null}
       }
     }
   ]
