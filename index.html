@@ -86,7 +86,15 @@
             <p>We can conclude that while wildfires did contribute to significant deforestation, they affect grasslands EVEN MORE!</p>
         </div>
     </div>
-
+    <div class="container">
+    
+        <h2>fourth chart</h2>
+        <div id="saltmarshes"></div>
+        
+        <div class="legend-note">
+            <p></p>
+        </div>
+    </div>
     <script type="text/javascript">
 
         var spec1 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/deforestation_map.vg.json";
@@ -102,6 +110,11 @@
                 // Embed the landcovers chart
         var spec3 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/land_covers.vg.json";
         vegaEmbed('#land_covers', spec3).then(function(result) {
+            // Access the Vega view instance
+        }).catch(console.error);
+
+        var spec4 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/saltmarshes.vg.json";
+        vegaEmbed('#saltmarshes', spec4).then(function(result) {
             // Access the Vega view instance
         }).catch(console.error);
     </script>
