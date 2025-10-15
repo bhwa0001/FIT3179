@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 700,
   "height": 400,
-  "title": "Land Cover Class Rankings, Australia 1988–2024",
+  "title": "Land Cover Class Rankings, Australia",
   "data": {
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/Proportion-of-land-cover-classes-Australia-1988-2024.csv"
   },
