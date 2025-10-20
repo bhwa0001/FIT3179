@@ -18,7 +18,7 @@
     },
     {
       "filter": "isValid(datum.ProtectedNumber) && !isNaN(datum.ProtectedNumber) && datum.ProtectedNumber > 0"
-    },
+    }
 
   ],
   "mark": "rect",
