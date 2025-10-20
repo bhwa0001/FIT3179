@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "autosize": "fit",
   "width": 900,
   "height": 600,
   "title": "Protected Areas by Region (2013-2024)",
@@ -21,7 +22,7 @@
     }
 
   ],
-    "mark": {"type": "rect", "align": "left", "baseline": "top"},
+  "mark": {"type": "rect"},
   "encoding": {
     "y": {
       "field": "Country Name", 
@@ -46,9 +47,5 @@
       {"field": "Year", "type": "ordinal"},
       {"field": "ProtectedNumber", "type": "quantitative", "title": "Protected Areas (%)", "format": ".2f"}
     ]
-  },
-  "config": {
-    "axis": {"grid": false},
-    "view": {"stroke": null}
   }
 }
