@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 600,
+  "width": 800,
+  "height": 500,
   "title": "Protected Areas by Country (2013-2024)",
   "data": {
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/protected-areas.csv",
-    "format": {"type": "csv", "parse": {"2013": "number", "2014": "number", "2015": "number", "2016": "number", "2017": "number", "2018": "number", "2019": "number", "2020": "number", "2021": "number", "2022": "number", "2023": "number", "2024": "number"}}
+    "format": {"type": "csv"}
   },
   "transform": [
     {
@@ -25,7 +25,7 @@
       "groupby": ["Year"]
     },
     {
-      "filter": "datum.rank <= 10"
+      "filter": "datum.rank <= 15"
     }
   ],
   "mark": "rect",
@@ -34,29 +34,27 @@
       "field": "Country Name", 
       "type": "nominal",
       "title": "Country",
-      "sort": {"encoding": "x", "order": "ascending"}
+      "sort": {"field": "ProtectedNumber", "op": "mean", "order": "descending"}
     },
     "x": {
       "field": "Year",
       "type": "ordinal", 
-      "title": "Year",
-      "axis": {"labelAngle": 0}
+      "title": "Year"
     },
     "color": {
       "field": "ProtectedNumber",
       "type": "quantitative",
       "title": "Protected Areas (%)",
-      "scale": {"scheme": "greens"}
+      "scale": {"scheme": "blues"}
     },
     "tooltip": [
       {"field": "Country Name", "type": "nominal", "title": "Country"},
       {"field": "Year", "type": "ordinal"},
-      {"field": "ProtectedNumber", "type": "quantitative", "title": "Protected Areas (%)", "format": ".2f"},
+      {"field": "ProtectedNumber", "type": "quantitative", "title": "Protected Areas (%)", "format": ".1f"},
       {"field": "rank", "type": "ordinal", "title": "Global Rank"}
     ]
   },
   "config": {
-    "axis": {"grid": true},
-    "view": {"stroke": null}
+    "axis": {"grid": true}
   }
 }
