@@ -4,9 +4,18 @@
   "height": 500,
   "title": "Protected Areas by Country (2013-2024)",
   "data": {
-    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/protected-areas.csv",
-    "format": {"type": "csv"}
+    "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/protected-areas-data.csv"
   },
+  "params": [
+    {
+      "name": "region_filter",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Africa", "Asia", "Europe", "Americas", "Oceania"],
+        "name": "Filter by Region:"
+      }
+    }
+  ],
   "transform": [
     {
       "fold": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
@@ -17,7 +26,14 @@
       "as": "ProtectedNumber"
     },
     {
-      "filter": "isValid(datum.ProtectedNumber) && !isNaN(datum.ProtectedNumber) && datum.ProtectedNumber > 0"
+      "filter": "isValid(datum.ProtectedNumber) && datum.ProtectedNumber > 0"
+    },
+    {
+      "calculate": "indexof(datum['Country Name'], 'Africa') >= 0 ? 'Africa' : indexof(datum['Country Name'], 'Asia') >= 0 ? 'Asia' : indexof(datum['Country Name'], 'Europe') >= 0 ? 'Europe' : indexof(datum['Country Name'], 'America') >= 0 ? 'Americas' : 'Oceania'",
+      "as": "Region"
+    },
+    {
+      "filter": "region_filter == 'All' || datum.Region == region_filter"
     },
     {
       "window": [{"op": "rank", "as": "rank"}],
@@ -25,7 +41,7 @@
       "groupby": ["Year"]
     },
     {
-      "filter": "datum.rank <= 15"
+      "filter": "datum.rank <= 20"
     }
   ],
   "mark": "rect",
@@ -51,7 +67,7 @@
       {"field": "Country Name", "type": "nominal", "title": "Country"},
       {"field": "Year", "type": "ordinal"},
       {"field": "ProtectedNumber", "type": "quantitative", "title": "Protected Areas (%)", "format": ".1f"},
-      {"field": "rank", "type": "ordinal", "title": "Global Rank"}
+      {"field": "rank", "type": "ordinal", "title": "Rank"}
     ]
   },
   "config": {
