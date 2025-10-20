@@ -48,7 +48,7 @@
     ]
   },
   "config": {
-    "axis": {"grid": true},
+    "axis": {"grid": false},
     "view": {"stroke": null}
   }
 }
