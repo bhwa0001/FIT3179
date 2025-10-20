@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 900,
   "height": 600,
-  "title": "Protected Areas by Country (2013-2024)",
+  "title": "Protected Areas by Region (2013-2024)",
   "data": {
     "url": "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/protected-areas.csv",
     "format": {"type": "csv", "parse": {"2013": "number", "2014": "number", "2015": "number", "2016": "number", "2017": "number", "2018": "number", "2019": "number", "2020": "number", "2021": "number", "2022": "number", "2023": "number", "2024": "number"}}
