@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 450,
-  "background": "#e8f5e8",
   "title": "Forest Area Change by Country (1990-2020)",
   "projection": {"type": "equalEarth"},
   "layer": [
