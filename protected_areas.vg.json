@@ -17,8 +17,8 @@
       "as": "ProtectedNumber"
     },
     {
-      "filter": "isValid(datum.ProtectedNumber) && !isNaN(datum.ProtectedNumber) && datum.ProtectedNumber > 0"
-    }
+      "filter": "isValid(datum.ProtectedNumber) && !isNaN(datum.ProtectedNumber) && datum.ProtectedNumber > 0 && (test(datum['Country Name'], /&/) || test(datum['Country Name'], /\\(/) || datum['Country Name'] == 'World' || test(datum['Country Name'], /(income|OECD|developed|demographic|IBRD|IDA|conflict|small states|classified)/i))"
+    },
 
   ],
   "mark": "rect",
@@ -26,7 +26,7 @@
     "y": {
       "field": "Country Name", 
       "type": "nominal",
-      "title": "Country",
+      "title": "Region",
       "sort": {"encoding": "x", "order": "ascending"}
     },
     "x": {
@@ -42,7 +42,7 @@
       "scale": {"scheme": "greens"}
     },
     "tooltip": [
-      {"field": "Country Name", "type": "nominal", "title": "Country"},
+      {"field": "Country Name", "type": "nominal", "title": "Region"},
       {"field": "Year", "type": "ordinal"},
       {"field": "ProtectedNumber", "type": "quantitative", "title": "Protected Areas (%)", "format": ".2f"}
     ]
