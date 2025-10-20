@@ -168,8 +168,8 @@
 
     <div class="container">
     
-        <h2>our climate</h2>
-        <div id="climate"></div>
+        <h2>Which countries are taking steps to improve?</h2>
+        <div id="protected_areas"></div>
         
         <div class="legend-note">
             <p></p>
@@ -218,6 +218,10 @@
 
         var spec4 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/seagrass.vg.json";
         vegaEmbed('#seagrass', spec4).then(function(result) {
+            // Access the Vega view instance
+        }).catch(console.error);
+        var spec5 = "https://raw.githubusercontent.com/bhwa0001/FIT3179/main/protected_areas.vg.json";
+        vegaEmbed('#protected_areas', spec5).then(function(result) {
             // Access the Vega view instance
         }).catch(console.error);
     </script>
