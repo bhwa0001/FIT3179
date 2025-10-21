@@ -18,7 +18,6 @@
     }
   ],
   "transform": [
-
     {
       "filter": "datum.Entity == country_select"
     },
@@ -61,6 +60,20 @@
         "Wildfire"
       ],
       "as": ["Cause", "LossValue"]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "LossValue",
+          "as": "total_loss_year"
+        }
+      ],
+      "groupby": ["Year"]
+    },
+    {
+      "calculate": "(datum.LossValue / datum.total_loss_year) * 100",
+      "as": "percentage"
     }
   ],
   "layer": [
@@ -94,6 +107,12 @@
             "type": "quantitative",
             "format": ",.0f",
             "title": "Hectares Lost"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
           }
         ]
       }
