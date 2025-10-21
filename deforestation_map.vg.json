@@ -78,6 +78,29 @@
           {"field": "Forest Area Absolute Change 1990-2020", "type": "quantitative", "title": "Net Forest Change (1k ha)", "format": ".0f"}
         ]
       }
+    },
+        {
+      "data": {
+        "values": [
+          {"longitude": -50, "latitude": -10, "text": "Brazil: -92,000k ha", "fontSize": 10, "fontWeight": "bold"},
+          {"longitude": 105, "latitude": 35, "text": "China: +63,000k ha", "fontSize": 10, "fontWeight": "bold"},
+          {"longitude": 135, "latitude": -25, "text": "Australia: +100k ha", "fontSize": 10, "fontWeight": "bold"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fill": "black",
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "text", "type": "nominal"},
+        "fontSize": {"field": "fontSize", "type": "quantitative"},
+        "fontWeight": {"field": "fontWeight", "type": "nominal"}
+      }
     }
   ]
 }
