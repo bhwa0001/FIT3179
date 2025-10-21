@@ -112,10 +112,51 @@
             "field": "percentage",
             "type": "quantitative",
             "format": ".1f",
-            "title": "Percentage (%)"
+            "title": "Percentage"
           }
         ]
       }
+    },
+    {
+      "data": {
+        "values": [
+          {"country": "Australia", "year": "2020", "cause": "Wildfire", "text": "2020 Australian Bushfires"},
+          {"country": "Brazil", "year": "2003", "cause": "Agriculture", "text": "2003 Agriculture Peak"},
+          {"country": "China", "year": "2015", "cause": "Logging", "text": "2015 Logging Peak"}
+        ]
+      },
+      "transform": [
+        {"filter": "datum.country == country_select"}
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "black",
+            "strokeWidth": 1,
+            "strokeDash": [3, 3]
+          },
+          "encoding": {
+            "x": {"field": "year", "type": "temporal"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "dx": 5,
+            "dy": -5,
+            "fontSize": 10,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {"field": "year", "type": "temporal"},
+            "y": {"value": 0},
+            "text": {"field": "text", "type": "nominal"}
+          }
+        }
+      ]
     }
   ]
 }
