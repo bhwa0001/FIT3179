@@ -82,8 +82,8 @@
       {
         "data": {
           "values": [
-            {"longitude": -30, "latitude": -10, "text": "Brazil: -92,000k ha", "fontSize": 10, "fontWeight": "bold"},
-            {"longitude": 130, "latitude": 20, "text": "China: +63,000k ha", "fontSize": 10, "fontWeight": "bold"},
+            {"longitude": -10, "latitude": -10, "text": "Brazil: -92,000k ha", "fontSize": 10, "fontWeight": "bold"},
+            {"longitude": 150, "latitude": 20, "text": "China: +63,000k ha", "fontSize": 10, "fontWeight": "bold"},
             {"longitude": 110, "latitude": -40, "text": "Australia: +100k ha", "fontSize": 10, "fontWeight": "bold"}
           ]
         },
