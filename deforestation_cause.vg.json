@@ -112,7 +112,7 @@
             "field": "percentage",
             "type": "quantitative",
             "format": ".1f",
-            "title": "Percentage"
+            "title": "Percentage (%)"
           }
         ]
       }
