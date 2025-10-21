@@ -76,7 +76,7 @@
           "aggregate": "sum",
           "field": "LossValue",
           "type": "quantitative",
-          "title": "Tree Cover Loss (hectares)",
+          "title": "Tree Cover Loss Proportion %",
           "stack": "normalize"
         },
         "color": {
@@ -86,7 +86,7 @@
         },
         "tooltip": [
           {"field": "Entity", "type": "nominal", "title": "Country"},
-          {"field": "Year", "type": "temporal"},
+          {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"},
           {"field": "Cause", "type": "nominal", "title": "Cause"},
           {
             "aggregate": "sum",

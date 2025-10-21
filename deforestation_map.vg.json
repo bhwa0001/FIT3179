@@ -49,7 +49,7 @@
         "size": {
           "field": "Absolute Change",
           "type": "quantitative",
-          "title": "Forest Area Change (km²)",
+          "title": "Absolute Forest Change (1k ha)",
           "scale": {
             "type": "sqrt",
             "range": [10, 1000]
@@ -62,7 +62,7 @@
         "color": {
           "field": "Forest Area Absolute Change 1990-2020",
           "type": "quantitative",
-          "title": "Net Change (km²)",
+          "title": "Net Forest Change (1k ha)",
           "scale": {
             "type": "linear",
             "scheme": "redyellowgreen",
@@ -75,7 +75,7 @@
         },
         "tooltip": [
           {"field": "country", "type": "nominal", "title": "Country"},
-          {"field": "Forest Area Absolute Change 1990-2020", "type": "quantitative", "title": "Net Forest Change (km²)", "format": ".0f"}
+          {"field": "Forest Area Absolute Change 1990-2020", "type": "quantitative", "title": "Net Forest Change (1k ha)", "format": ".0f"}
         ]
       }
     }

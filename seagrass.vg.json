@@ -29,7 +29,7 @@
         },
         "tooltip": [
           {"field": "State", "type": "nominal", "title": "Region"},
-          {"field": "Extent", "type": "quantitative", "format": ".1f", "title": "Extent ('000 ha)"}
+          {"field": "Extent", "type": "quantitative", "format": ".1f", "title": "1k ha extent"}
         ]
       }
     },
